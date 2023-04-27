@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.outer-container {
+  position: relative;
+  height: 90vh;
+  margin: 10px;
+  padding: 10vh 5vw;
+  border: 5px solid black;
+  resize: both;
+  overflow: hidden;
+}
+
+.outer-container::after {
+  content: "Outer Container (Re-size)";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.outer-container::before {
+  content: "Done By - Sanket Banerjee";
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 14px;
+}
+
+.graph-container {
+  position: absolute;
+  width: 90%;
+  border: 3px solid black;
+  padding: 50px 3vw 25px;
+  cursor: grab;
+  background-color: white;
+  z-index: 2;
+}
+
+.graph-container::after {
+  content: "Graph Container (Dragable)";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.graph-container .echarts-for-react {
+  border: 1px solid black;
+}
